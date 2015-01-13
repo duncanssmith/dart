@@ -1,0 +1,17 @@
+/bootstrap/compiled.php
+/app/config/database.php
+/app/config/local/database.php
+/vendor
+composer.phar
+composer.lock
+.idea/*.xml
+/public/media/images/640/*
+/public/media/images/320/*
+/public/media/images/160/*
+/public/media/images/120/*
+/public/media/images/64/*
+
+.env.*.php
+.env.php
+.DS_Store
+Thumbs.db
