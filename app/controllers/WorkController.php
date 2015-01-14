@@ -124,22 +124,22 @@ class WorkController extends BaseController {
                         // add the layer to the canvas, centered
                         $image = $canvas->insert($layer, 'center', 320, 320);
 
-                        $image->save($target_path.'640/sh_'.$ref.'.jpg');
+                        $image->save($target_path.'640/'.$ref.'.jpg');
                         $image->resize(320, 320);
-                        $image->save($target_path.'320/sh_'.$ref.'.jpg');
+                        $image->save($target_path.'320/'.$ref.'.jpg');
                         $image->resize(160, 160);
-                        $image->save($target_path.'160/sh_'.$ref.'.jpg');
+                        $image->save($target_path.'160/'.$ref.'.jpg');
                         $image->resize(120, 120);
-                        $image->save($target_path.'120/sh_'.$ref.'.jpg');
+                        $image->save($target_path.'120/'.$ref.'.jpg');
                         $image->resize(64, 64);
-                        $image->save($target_path.'64/sh_'.$ref.'.jpg');
+                        $image->save($target_path.'64/'.$ref.'.jpg');
                     } else {
-                        $work->delete();
+                        //$work->delete();
                         Session::flash('message', 'The photo file was invalid');
                         return Redirect::to('works');
                     }
                 } else {
-                    $work->delete();
+                    //$work->delete();
                     Session::flash('message', 'No photo file was uploaded');
                     return Redirect::to('works');
                 }
@@ -275,15 +275,15 @@ class WorkController extends BaseController {
                         // add the layer to the canvas, centered
                         $image = $canvas->insert($layer, 'center', 320, 320);
 
-                        $image->save($target_path.'640/sh_'.$ref.'.jpg');
+                        $image->save($target_path.'640/'.$ref.'.jpg');
                         $image->resize(320, 320);
-                        $image->save($target_path.'320/sh_'.$ref.'.jpg');
+                        $image->save($target_path.'320/'.$ref.'.jpg');
                         $image->resize(160, 160);
-                        $image->save($target_path.'160/sh_'.$ref.'.jpg');
+                        $image->save($target_path.'160/'.$ref.'.jpg');
                         $image->resize(120, 120);
-                        $image->save($target_path.'120/sh_'.$ref.'.jpg');
+                        $image->save($target_path.'120/'.$ref.'.jpg');
                         $image->resize(64, 64);
-                        $image->save($target_path.'64/sh_'.$ref.'.jpg');
+                        $image->save($target_path.'64/'.$ref.'.jpg');
                     } else {
                         //$work->delete();
                         Session::flash('message', 'The photo file was invalid');

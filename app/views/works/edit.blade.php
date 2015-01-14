@@ -19,7 +19,7 @@
 
 {{ Form::model($work, array('route' => array('works.update', $work->id), 'method' => 'PUT')) }}
 
-    <img src="/media/images/160/sh_{{$work->reference}}.jpg">
+    <img src="/media/images/160/{{$work->reference}}.jpg">
 
 	<div class="form-group">
 		{{ Form::label('image', 'Image') }}

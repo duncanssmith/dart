@@ -30,7 +30,7 @@
                             @endif
                         @endif
                             <td class="work-container">
-    	    	                <a id="modal-{{ $work->reference }}" data-toggle="modal" data-target="#item-show-{{ $work->reference }}" ><img src="/media/images/320/sh_{{ $work->reference }}.jpg"></a><br>
+    	    	                <a id="modal-{{ $work->reference }}" data-toggle="modal" data-target="#item-show-{{ $work->reference }}" ><img src="/media/images/320/{{ $work->reference }}.jpg"></a><br>
 
                                 <!--<p>{{ $work->title }} </p>-->
                                 <!-- {{ $work->media }} <br>
@@ -47,7 +47,7 @@
                                                 <h4 class="modal-title">{{ $work->title }}</h4>
                                             </div>
                                             <div class="modal-body ">
-                                                <img src="/media/images/320/sh_{{ $work->reference }}.jpg">
+                                                <img src="/media/images/320/{{ $work->reference }}.jpg">
                                             </div>
                                             <div class="modal-footer">
                                                 <p class="modal-title pull-left">

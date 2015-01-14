@@ -37,7 +37,7 @@
     @foreach($works as $key => $work)
         <tr>
 
-        <td><a href="{{ URL::to('works/' . $work->id) }}"><img src="/media/images/64/sh_{{ $work->reference }}.jpg"></a></td>
+        <td><a href="{{ URL::to('works/' . $work->id) }}"><img src="/media/images/64/{{ $work->reference }}.jpg"></a></td>
         <td>{{ $work->title }}</td>
         <td>{{ $work->reference }}</td>
         <td>{{ $work->media }}</td>

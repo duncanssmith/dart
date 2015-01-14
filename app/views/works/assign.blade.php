@@ -21,7 +21,7 @@
 
     {{ Form::hidden('work_id', $work->id) }}
 
-    <img src="/media/images/64/sh_{{$work->reference}}.jpg">
+    <img src="/media/images/64/{{$work->reference}}.jpg">
 
     	<div class="form-group">
             @foreach ($groups as $group)

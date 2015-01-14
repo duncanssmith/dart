@@ -14,7 +14,7 @@
 
 	<div class="text-left">
 		<h2>{{ $work->title }}</h2>
-		<a href=""><img src="/media/images/640/sh_{{$work->reference}}.jpg"></a>
+		<a href=""><img src="/media/images/640/{{$work->reference}}.jpg"></a>
 		<p>
 			{{ $work->media }}<br>
 			{{ $work->dimensions }}<br>
