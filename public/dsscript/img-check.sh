@@ -3,6 +3,7 @@
 #IMGPATH=/Users/duncansmith/Sites/dart.local/public/media/images
 IMGPATH=/home/duncan/Sites/dart.local/public/media/images
 
+
 cd $IMGPATH
 
 echo '64'
