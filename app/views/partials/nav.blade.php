@@ -7,7 +7,7 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
-            </button> 
+            </button>
 
             <div class="navbar-collapse collapse " role="navigation">
 
@@ -15,19 +15,13 @@
 
                     <li class="dropdown" role="presentation">
                         <a href="/" class="navbar-brand header-link">
-                            <strong>Duncan Smith</strong>
+                            <strong>dart</strong>
                         </a>
-                    </li> 
-
-                    <li class="dropdown" role="presentation">
-                        <a href="/page/1" class="header-link">
-                            Current
-                        </a>
-                    </li> 
+                    </li>
 
                     <li class="dropdown" role="presentation">
                         <a href="#" data-toggle="dropdown" class="header-link">
-                            Work
+                            list
                         </a>
                         <ul class="dropdown-menu" role="menu" aria-labelledby="dLabel">
                             @foreach($group_list as $item)
@@ -37,21 +31,27 @@
                     </li>
 
                     <li class="dropdown" role="presentation">
-                        <a href="/page/2" title="CV" class="header-link">
-                            CV
+                        <a href="/page/1" class="header-link">
+                            work
                         </a>
-                    </li>                     
+                    </li>
+
+                    <li class="dropdown" role="presentation">
+                        <a href="/page/2" class="header-link">
+                            contact
+                        </a>
+                    </li>
 
                     <li class="dropdown" role="presentation">
                         <a href="/page/3" class="header-link">
-                            Words 
+                            info
                         </a>
-                    </li>                     
+                    </li>
 
                     @if (Auth::guest())
 
                     @else
-                    
+
                         <li><a href="/pages" class="header-link-secure"><i class="fa fa-bookmark"></i> Pages</a></li>
                         <li><a href="/works" class="header-link-secure"><i class="fa fa-paint-brush"></i> Works</a></li>
                         <li><a href="/texts" class="header-link-secure"><i class="fa fa-align-left"></i> Texts</a></li>
@@ -76,7 +76,7 @@
                         <ul class="dropdown-menu" role="menu" aria-labelledby="dlabel">
                             <li class="dropdown" role="presentation"><a href="/logout" title="Log out" class="header-dropdown-link">Log out</a></li>
                         </ul>
-                @endif  
+                @endif
             </ul>
         </div>
     </nav>
