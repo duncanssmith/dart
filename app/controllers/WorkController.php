@@ -63,6 +63,7 @@ class WorkController extends BaseController {
             //$destination_path = '/Users/duncansmith/Sites/dart.local/public/dsscript/uploads';
             $destination_path = getEnv('PUBLIC_BASE_PATH').'uploads/';
             $target_path = getEnv('PUBLIC_BASE_PATH').'media/images/';
+            $action = 'store';            
 
             // validate
             // read more on validation at http://laravel.com/docs/validation
@@ -91,58 +92,8 @@ class WorkController extends BaseController {
                 $work->reference = sprintf("%04d", $work->id);
                 $work->save();
 
-                // Upload the photo
-                if ($photo = Input::file('image')) {
-                    // Check we got an uploaded file
-                    if ($photo->isValid())
-                    {
-                        $ref = sprintf("%04d", $work->id);
-
-                        $photo->move($destination_path, $work->id);
-
-                        $target = $destination_path.$work->id;
-
-                        $canvas = Image::canvas(640, 640, '#ffffff');
-                        $layer = Image::make($target);
-
-                        $photo_height = $layer->height();
-                        $photo_width = $layer->width();
-
-                        if ($photo_height > $photo_width) {
-                            //portrait, vertical
-                            $layer->resize(null, 640, function ($constraint) {
-                                $constraint->aspectRatio();
-                                $constraint->upsize();
-                            });
-                        } else {
-                            //landscape, horizontal
-                            $layer->resize(640, null, function ($constraint) {
-                                $constraint->aspectRatio();
-                                $constraint->upsize();
-                            });
-                        }
-                        // add the layer to the canvas, centered
-                        $image = $canvas->insert($layer, 'center', 320, 320);
-
-                        $image->save($target_path.'640/'.$ref.'.jpg');
-                        $image->resize(320, 320);
-                        $image->save($target_path.'320/'.$ref.'.jpg');
-                        $image->resize(160, 160);
-                        $image->save($target_path.'160/'.$ref.'.jpg');
-                        $image->resize(120, 120);
-                        $image->save($target_path.'120/'.$ref.'.jpg');
-                        $image->resize(64, 64);
-                        $image->save($target_path.'64/'.$ref.'.jpg');
-                    } else {
-                        //$work->delete();
-                        Session::flash('message', 'The photo file was invalid');
-                        return Redirect::to('works');
-                    }
-                } else {
-                    //$work->delete();
-                    Session::flash('message', 'No photo file was uploaded');
-                    return Redirect::to('works');
-                }
+                // Try to upload the photo
+                $this->file_upload_resize_cut(Input::file('image'), $work, $destination_path, $target_path, $action);                
 
                 // redirect
                 Session::flash('message', 'Successfully created work');
@@ -218,11 +169,15 @@ class WorkController extends BaseController {
     {
         // Check user is logged in
         if (Auth::check()) {
-            // validate
-            // read more on validation at http://laravel.com/docs/validation
+            // init vars
+            //$destination_path = '/Users/duncansmith/Sites/dart.local/public/dsscript/uploads';
+            $destination_path = getEnv('PUBLIC_BASE_PATH').'uploads/';
+            $target_path = getEnv('PUBLIC_BASE_PATH').'media/images/';
+            $action = 'update';
             $rules = array(
                 'title'       => 'required',
             );
+
             $validator = Validator::make(Input::all(), $rules);
             // process the login
             if ($validator->fails()) {
@@ -241,49 +196,14 @@ class WorkController extends BaseController {
                 $work->notes = Input::get('notes');
                 $work->save();
 
-                // Upload the photo, if one is provided
-                // Upload the photo
+
+                // Check the file exists and is valid
                 if ($photo = Input::file('image')) {
+                    // Try to upload the photo
                     // Check we got an uploaded file
                     if ($photo->isValid())
                     {
-                        $ref = sprintf("%04d", $work->id);
-
-                        $photo->move($destination_path, $work->id);
-
-                        $target = $destination_path.$work->id;
-
-                        $canvas = Image::canvas(640, 640, '#ffffff');
-                        $layer = Image::make($target);
-
-                        $photo_height = $layer->height();
-                        $photo_width = $layer->width();
-
-                        if ($photo_height > $photo_width) {
-                            //portrait, vertical
-                            $layer->resize(null, 640, function ($constraint) {
-                                $constraint->aspectRatio();
-                                $constraint->upsize();
-                            });
-                        } else {
-                            //landscape, horizontal
-                            $layer->resize(640, null, function ($constraint) {
-                                $constraint->aspectRatio();
-                                $constraint->upsize();
-                            });
-                        }
-                        // add the layer to the canvas, centered
-                        $image = $canvas->insert($layer, 'center', 320, 320);
-
-                        $image->save($target_path.'640/'.$ref.'.jpg');
-                        $image->resize(320, 320);
-                        $image->save($target_path.'320/'.$ref.'.jpg');
-                        $image->resize(160, 160);
-                        $image->save($target_path.'160/'.$ref.'.jpg');
-                        $image->resize(120, 120);
-                        $image->save($target_path.'120/'.$ref.'.jpg');
-                        $image->resize(64, 64);
-                        $image->save($target_path.'64/'.$ref.'.jpg');
+                        $this->file_upload_resize_cut($photo, $work, $destination_path, $target_path, $action);                
                     } else {
                         //$work->delete();
                         Session::flash('message', 'The photo file was invalid');
@@ -291,7 +211,7 @@ class WorkController extends BaseController {
                     }
                 } else {
                     //$work->delete();
-                    Session::flash('message', 'No new photo file was uploaded');
+                    Session::flash('message', 'No photo file was uploaded');
                     return Redirect::to('works');
                 }
 
@@ -327,5 +247,50 @@ class WorkController extends BaseController {
             Session::flash('message', 'Please log in');
             return Redirect::to('/');
         }
+    }
+
+    /**
+     *
+     */
+    public function file_upload_resize_cut($photo, $work, $destination_path, $target_path, $action)
+    {
+        // name the ref field after the work id
+        $ref = sprintf("%04d", $work->id);
+
+        $photo->move($destination_path, $work->id);
+
+        $target = $destination_path.$work->id;
+
+        $canvas = Image::canvas(640, 640, '#ffffff');
+        $layer = Image::make($target);
+
+        $photo_height = $layer->height();
+        $photo_width = $layer->width();
+
+        if ($photo_height > $photo_width) {
+            //portrait, vertical
+            $layer->resize(null, 640, function ($constraint) {
+                $constraint->aspectRatio();
+                $constraint->upsize();
+            });
+        } else {
+            //landscape, horizontal
+            $layer->resize(640, null, function ($constraint) {
+                $constraint->aspectRatio();
+                $constraint->upsize();
+            });
+        }
+        // add the layer to the canvas, centered
+        $image = $canvas->insert($layer, 'center', 320, 320);
+
+        $image->save($target_path.'640/'.$ref.'.jpg');
+        $image->resize(320, 320);
+        $image->save($target_path.'320/'.$ref.'.jpg');
+        $image->resize(160, 160);
+        $image->save($target_path.'160/'.$ref.'.jpg');
+        $image->resize(120, 120);
+        $image->save($target_path.'120/'.$ref.'.jpg');
+        $image->resize(64, 64);
+        $image->save($target_path.'64/'.$ref.'.jpg');
     }
 }

@@ -19,6 +19,8 @@
 
 {{ Form::open(array('url' => 'works', 'files' => true)) }}
 
+
+
     <div class="form-group">
         {{ Form::label('image', 'Image') }}
         {{ Form::file('image', ['class' => 'btn btn-default']) }}
