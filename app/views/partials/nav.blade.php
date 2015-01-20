@@ -21,7 +21,7 @@
 
                     <li class="dropdown" role="presentation">
                         <a href="#" data-toggle="dropdown" class="header-link">
-                            list
+                            pages
                         </a>
                         <ul class="dropdown-menu" role="menu" aria-labelledby="dLabel">
                             @foreach($group_list as $item)
@@ -30,23 +30,11 @@
                         </ul>
                     </li>
 
-                    <li class="dropdown" role="presentation">
+                    <!--<li class="dropdown" role="presentation">
                         <a href="/page/1" class="header-link">
-                            work
+                            first
                         </a>
-                    </li>
-
-                    <li class="dropdown" role="presentation">
-                        <a href="/page/2" class="header-link">
-                            contact
-                        </a>
-                    </li>
-
-                    <li class="dropdown" role="presentation">
-                        <a href="/page/3" class="header-link">
-                            info
-                        </a>
-                    </li>
+                    </li>-->
 
                     @if (Auth::guest())
 
