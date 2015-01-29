@@ -15,13 +15,15 @@
 	<div class="text-left">
 		<h2>{{ $work->title }}</h2>
 		<a href=""><img src="/media/images/640/{{$work->reference}}.jpg"></a>
+                <br>
+                <br>
 		<p>
 			{{ $work->media }}<br>
 			{{ $work->dimensions }}<br>
 			{{ $work->work_date }}<br>
 			{{ $work->description }}<br>
 			{{ $work->notes }}
-		</p>
+                </p>
 		<a href="/page/{{ $_GET['group'] }}" class="btn btn-sm btn-default"><i class="fa fa-arrow-left" style="color:#999;"></i> {{ $group->name }}</a>
 	</div>
 

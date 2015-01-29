@@ -15,7 +15,7 @@
 
                     <li class="dropdown" role="presentation">
                         <a href="/" class="navbar-brand header-link">
-                            <strong>dart</strong>
+                            <strong>Duncan Smith</strong>
                         </a>
                     </li>
 
