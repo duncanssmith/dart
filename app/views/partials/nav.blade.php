@@ -38,6 +38,8 @@
 
                     @if (Auth::guest())
 
+                        <li><a href="/register" class="header-link-secure">Register</a></li>
+
                     @else
 
                         <li><a href="/pages" class="header-link-secure"><i class="fa fa-bookmark"></i> Pages</a></li>
