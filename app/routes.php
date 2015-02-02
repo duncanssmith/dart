@@ -25,15 +25,15 @@ Route::post('/save_page_works_order', ['as' => 'save_page_works_order',  'uses' 
 Route::post('/save_page_texts_order', ['as' => 'save_page_texts_order',  'uses' => 'GroupController@save_page_texts_order']);
 
 # Registration COMMENTED FOR PRODUCTION
-Route::get('/register', 'RegistrationController@create')->before('guest');
-Route::post('/register', ['as' => 'registration.store', 'uses' => 'RegistrationController@store']);
+//Route::get('/register', 'RegistrationController@create')->before('guest');
+//Route::post('/register', ['as' => 'registration.store', 'uses' => 'RegistrationController@store']);
 
 # Authentication
 Route::get('login', ['as' => 'login', 'uses' => 'SessionsController@create']);
 Route::get('logout', ['as' => 'logout', 'uses' => 'SessionsController@destroy']);
 Route::resource('sessions', 'SessionsController', ['only' => ['create', 'store', 'destroy']]);
 // COMMENTED FOR PRODUCTION
-Route::controller('password', 'RemindersController');
+//Route::controller('password', 'RemindersController');
 
 // CRUD
 Route::resource('works', 'WorkController');
