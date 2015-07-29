@@ -20,7 +20,7 @@
                     @endforeach
                 </div>
 
-                @elseif (false)
+                @elseif (true)
 
     <div class="container">
         <div class="row">
@@ -52,7 +52,7 @@
                                      {{ $work->work_date }} -->
                                 <!-- Button trigger modal -->
                                 <br>
-                                <a id="modal-{{ $work->reference }}" href="/pagework/{{$work->id}}?group={{ $group->id}}" class="btn btn-sm btn-default"><i class="fa fa-arrow-right" style="color:#999;"></i> {{ $work->title }}</a>
+                                <a id="modal-{{ $work->reference }}" href="/pagework/{{$work->id}}?group={{ $group->id}}" class="btn btn-xs btn-default"><i class="fa fa-arrow-right" style="color:#999;"></i> {{ $work->title }}</a>
                                 <!-- Image display modal ////////////////////////////////////////////////////////// -->
                                 <div id="item-show-{{ $work->reference }}" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true">
                                     <div class="modal-dialog">
@@ -72,7 +72,7 @@
                                                 {{ $work->description }}&nbsp;
                                                 {{ $work->notes }}&nbsp;
                                                 </p>
-                                                <button type="button" class="btn btn-sm btn-default" data-dismiss="modal">Close</button>
+                                                <button type="button" class="btn btn-xs btn-default" data-dismiss="modal">Close</button>
                                             </div>
                                         </div>
                                     </div>

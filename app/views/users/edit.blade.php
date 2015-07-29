@@ -28,7 +28,7 @@
 	</div>
 
 	{{ Form::submit('Save', array('class' => 'btn btn-primary')) }}
-	<a href="/users" class="btn btn-sm btn-default">Cancel</a>
+	<a href="/users" class="btn btn-xs btn-default">Cancel</a>
 
 {{ Form::close() }}
 </div>

@@ -45,7 +45,7 @@
     </div>
 
 
-    {{ Form::submit('Save', array('class' => 'btn btn-primary')) }}
+    {{ Form::submit('Save', array('class' => 'btn btn-xs btn-primary')) }}
 
 {{ Form::close() }}
 

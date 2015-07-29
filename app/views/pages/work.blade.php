@@ -23,7 +23,7 @@
 			{{ $work->description }}<br>
 			{{ $work->notes }}
                 </p>
-		<a href="/page/{{ $_GET['group'] }}" class="btn btn-sm btn-default"><i class="fa fa-arrow-left" style="color:#999;"></i> {{ $group->name }}</a>
+		<a href="/page/{{ $_GET['group'] }}" class="btn btn-xs btn-default"><i class="fa fa-arrow-left" style="color:#999;"></i> {{ $group->name }}</a>
 	</div>
 
 @stop

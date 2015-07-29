@@ -37,13 +37,13 @@
 			<td>
 
 				<!-- show the user (uses the show method found at GET /users/{id} -->
-				<a class="btn btn-sm btn-success" href="{{ URL::to('users/' . $user->id) }}">Show</a>
+				<a class="btn btn-xs btn-success" href="{{ URL::to('users/' . $user->id) }}">Show</a>
 
 				<!-- edit this user (uses the edit method found at GET /users/{id}/edit -->
-				<a class="btn btn-sm btn-info" href="{{ URL::to('users/' . $user->id . '/edit') }}">Edit</a>
+				<a class="btn btn-xs btn-info" href="{{ URL::to('users/' . $user->id . '/edit') }}">Edit</a>
 
 				<!-- Button trigger modal -->
-                <button class="btn btn-sm btn-danger" data-toggle="modal" data-target="#item-delete-{{ $user->id }}">Delete</button>
+                <button class="btn btn-xs btn-danger" data-toggle="modal" data-target="#item-delete-{{ $user->id }}">Delete</button>
 
                 <!-- Are you sure you want to delete this? modal /////////////////////////////////// -->
                 <div id="item-delete-{{$user->id}}" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true">
@@ -57,12 +57,12 @@
                                 Are you sure you want to delete the user '{{$user->username}}'?
                             </div>
                             <div class="modal-footer">
-                                <button type="button" class="btn btn-sm btn-default" data-dismiss="modal">Close</button>
+                                <button type="button" class="btn btn-xs btn-default" data-dismiss="modal">Close</button>
                                 <!-- delete the group (uses the destroy method DESTROY /groups/{id} -->
                                 <!-- we will add this later since its a little more complicated than the other two buttons -->
                                 {{ Form::open(['url' => 'users/'.$user->id, 'class' => 'pull-right']) }}
                                 {{ Form::hidden('_method', 'DELETE') }}
-                                {{ Form::submit('Delete', array('class' => 'btn btn-sm btn-danger ')) }}
+                                {{ Form::submit('Delete', array('class' => 'btn btn-xs btn-danger ')) }}
                                 {{ Form::close() }}
                             </div>
                         </div>

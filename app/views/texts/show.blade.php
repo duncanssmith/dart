@@ -22,7 +22,7 @@
 		<strong>Publication date:</strong> {{ $text->publication_date }}<br>
 		<strong>Content:</strong> <blockquote>{{ $text->content }}</blockquote></p>
 	</div>
-	<a href="/texts" class="btn btn-sm btn-default"><i class="fa fa-arrow-left" style="color:#999;"></i> Back</a>
+	<a href="/texts" class="btn btn-xs btn-default"><i class="fa fa-arrow-left" style="color:#999;"></i> Back</a>
 
 </div>
 @stop

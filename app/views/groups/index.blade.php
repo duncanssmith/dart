@@ -49,22 +49,22 @@
             <!-- we will also add show, edit, and delete buttons -->
             <td>
 
-                {{--{{ Html::link(URL::route('Groups.destroy',$event->id), 'Delete', array('class' => 'btn btn-small btn-danger delete-event', 'data-title'=>'Delete group', 'data-content' => 'Are you sure you want to delete this groups?', 'onClick'=>'return false;')) }}--}}
+                {{--{{ Html::link(URL::route('Groups.destroy',$event->id), 'Delete', array('class' => 'btn btn-xs btn-danger delete-event', 'data-title'=>'Delete group', 'data-content' => 'Are you sure you want to delete this groups?', 'onClick'=>'return false;')) }}--}}
 
                 <!-- show the group (uses the show method found at GET /groups/{id} -->
-                <a class="btn btn-sm btn-success" href="{{ URL::to('pages/' . $group->id) }}">Show</a>
+                <a class="btn btn-xs btn-success" href="{{ URL::to('pages/' . $group->id) }}">Show</a>
 
                 <!-- edit this group (uses the edit method found at GET /groups/{id}/edit -->
-                <a class="btn btn-sm btn-info" href="{{ URL::to('pages/' . $group->id . '/edit') }}">Edit</a>
+                <a class="btn btn-xs btn-info" href="{{ URL::to('pages/' . $group->id . '/edit') }}">Edit</a>
 
                 <!-- edit this group (uses the edit method found at GET /groups/{id}/edit -->
-                <a class="btn btn-sm btn-primary" href="{{ URL::to('sort_page_works/' . $group->id ) }}">Sort works</a>
+                <a class="btn btn-xs btn-primary" href="{{ URL::to('sort_page_works/' . $group->id ) }}">Sort works</a>
 
                 <!-- edit this group (uses the edit method found at GET /groups/{id}/edit -->
-                <a class="btn btn-sm btn-primary" href="{{ URL::to('sort_page_texts/' . $group->id ) }}">Sort texts</a>
+                <a class="btn btn-xs btn-primary" href="{{ URL::to('sort_page_texts/' . $group->id ) }}">Sort texts</a>
 
                 <!-- Button trigger modal -->
-                <button class="btn btn-sm btn-danger" data-toggle="modal" data-target="#item-delete-{{$group->id}}">Delete</button>
+                <button class="btn btn-xs btn-danger" data-toggle="modal" data-target="#item-delete-{{$group->id}}">Delete</button>
 
                 <!-- Are you sure you want to delete this? modal /////////////////////////////////// -->
                 <div id="item-delete-{{$group->id}}" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true">
@@ -78,12 +78,12 @@
                                 Are you sure you want to delete the page '{{$group->name}}'?
                             </div>
                             <div class="modal-footer">
-                                <button type="button" class="btn btn-sm btn-default" data-dismiss="modal">Close</button>
+                                <button type="button" class="btn btn-xs btn-default" data-dismiss="modal">Close</button>
                                 <!-- delete the group (uses the destroy method DESTROY /groups/{id} -->
                                 <!-- we will add this later since its a little more complicated than the other two buttons -->
                                 {{ Form::open(array('url' => 'pages/' . $group->id, 'class' => 'pull-right')) }}
                                     {{ Form::hidden('_method', 'DELETE') }}
-                                {{ Form::submit('Delete', array('class' => 'btn btn-sm btn-danger ')) }}
+                                {{ Form::submit('Delete', array('class' => 'btn btn-xs btn-danger ')) }}
                                 {{ Form::close() }}
                             </div>
                         </div>
