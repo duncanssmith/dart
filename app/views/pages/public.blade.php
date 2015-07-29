@@ -31,7 +31,7 @@
 	        </thead>
 	    			@foreach($group->works as $work)
 	    			<tr>
-	    		        <td><a href="/pagework/{{$work->id}}"><img src="/media/images/64/sh_{{ $work->reference }}.jpg"></a></td>
+	    		        <td><a href="/pagework/{{$work->id}}"><img src="/media/images/64/{{ $work->reference }}.jpg"></a></td>
                 	    <td>{{ $work->id }}</td>
                 	    <td>{{ $work->title }}</td>
                 	    <td>{{ $work->media }}</td>
