@@ -44,7 +44,7 @@
                             @endif
                         @endif
                             <td class="work-container">
-                                <a id="modal-{{ $work->reference }}" data-toggle="modal" data-target="#item-show-{{ $work->reference }}" ><img src="/media/images/320/{{ $work->reference }}.jpg"></a><br>
+    	    	                <a id="modal-{{ $work->reference }}" data-toggle="modal" data-target="#item-show-{{ $work->reference }}" ><img src="/media/images/320/{{ $work->reference }}.jpg"></a><br>
 
                                 <!--<p>{{ $work->title }} </p>-->
                                 <!-- {{ $work->media }} <br>
