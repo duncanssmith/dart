@@ -52,19 +52,19 @@
                 {{--{{ Html::link(URL::route('Groups.destroy',$event->id), 'Delete', array('class' => 'btn btn-xs btn-danger delete-event', 'data-title'=>'Delete group', 'data-content' => 'Are you sure you want to delete this groups?', 'onClick'=>'return false;')) }}--}}
 
                 <!-- show the group (uses the show method found at GET /groups/{id} -->
-                <a class="btn btn-xs btn-success" href="{{ URL::to('pages/' . $group->id) }}">Show</a>
+                <a class="btn btn-xs btn-success" href="{{ URL::to('pages/' . $group->id) }}" title="Show"><i class="fa fa-eye"></i></a>
 
                 <!-- edit this group (uses the edit method found at GET /groups/{id}/edit -->
-                <a class="btn btn-xs btn-info" href="{{ URL::to('pages/' . $group->id . '/edit') }}">Edit</a>
+                <a class="btn btn-xs btn-info" href="{{ URL::to('pages/' . $group->id . '/edit') }}" title="Edit"><i class="fa fa-edit"></i></a>
 
                 <!-- edit this group (uses the edit method found at GET /groups/{id}/edit -->
-                <a class="btn btn-xs btn-primary" href="{{ URL::to('sort_page_works/' . $group->id ) }}">Sort works</a>
+                <a class="btn btn-xs btn-primary" href="{{ URL::to('sort_page_works/' . $group->id ) }}" title="Sort works"><i class="fa fa-sort"></i> Works</a>
 
                 <!-- edit this group (uses the edit method found at GET /groups/{id}/edit -->
-                <a class="btn btn-xs btn-primary" href="{{ URL::to('sort_page_texts/' . $group->id ) }}">Sort texts</a>
+                <a class="btn btn-xs btn-primary" href="{{ URL::to('sort_page_texts/' . $group->id ) }}" title="Sort texts"><i class="fa fa-sort"></i> Texts</a>
 
                 <!-- Button trigger modal -->
-                <button class="btn btn-xs btn-danger" data-toggle="modal" data-target="#item-delete-{{$group->id}}">Delete</button>
+                <a class="btn btn-xs btn-danger" data-toggle="modal" data-target="#item-delete-{{$group->id}}" title="Delete"><i class="fa fa-trash"></i></a>
 
                 <!-- Are you sure you want to delete this? modal /////////////////////////////////// -->
                 <div id="item-delete-{{$group->id}}" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true">
