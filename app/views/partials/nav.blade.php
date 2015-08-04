@@ -38,7 +38,7 @@
 
                     @if (Auth::guest())
 
-                        <li><a href="/register" class="header-link-secure">Register</a></li>
+                        {{--<li><a href="/register" class="header-link-secure">Register</a></li>--}}
 
                     @else
 
