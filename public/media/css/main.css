@@ -26,7 +26,7 @@ a, a:visited {
 }
 
 a.header-link-secure {
-    color: #c6c !important;
+    color: #bbc !important;
 }
 
 a.header-link {
@@ -43,10 +43,33 @@ h1 {
     margin: 16px 0 0 0;
 }
 
+h1.main-page-1 {
+    font-size: 60px;
+    margin: 40px 0 40px 0;
+    background: rgba(9,9,9,0.3);
+    color: #fff;
+}
+
+h1.main-page-2 {
+    font-size: 48px;
+    margin: 40px 0 40px 0;
+    background: rgba(9,9,9,0.3);
+    color: #000;
+}
+
+h1.main-page-3 {
+    font-size: 36px;
+    margin: 40px 0 40px 0;
+    background: rgba(9,9,9,0.3);
+    color: #000;
+}
+
+
+
 .error {color:red; font-style:italic; font-size:.9em;}
 
 .container {
-    background: rgba(255, 255, 255, .999);
+    background: rgba(0, 0, 0, 0);
 }
 .work-container {
     border: 0px solid #00f;
@@ -72,7 +95,7 @@ h1 {
 }
 
 .top-photo {
-    background: #282828 url('../images/Home/sh_0300s.jpg') no-repeat top center;
+    background: #b2ada8 url('../images/Home/land_meets_sea_A5h.png') no-repeat top center;
     min-height: 285px;
     background-size: cover;
     color: rgba(100,100,100,.9);

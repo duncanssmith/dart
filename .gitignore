@@ -10,8 +10,10 @@ composer.lock
 /public/media/images/160/*
 /public/media/images/120/*
 /public/media/images/64/*
+/public/uploads/*
 
 .env.*.php
 .env.php
 .DS_Store
+.tags
 Thumbs.db

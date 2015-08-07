@@ -7,7 +7,7 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
-            </button> 
+            </button>
 
             <div class="navbar-collapse collapse " role="navigation">
 
@@ -17,17 +17,11 @@
                         <a href="/" class="navbar-brand header-link">
                             <strong>Duncan Smith</strong>
                         </a>
-                    </li> 
-
-                    <li class="dropdown" role="presentation">
-                        <a href="/page/1" class="header-link">
-                            Current
-                        </a>
-                    </li> 
+                    </li>
 
                     <li class="dropdown" role="presentation">
                         <a href="#" data-toggle="dropdown" class="header-link">
-                            Work
+                            pages
                         </a>
                         <ul class="dropdown-menu" role="menu" aria-labelledby="dLabel">
                             @foreach($group_list as $item)
@@ -36,22 +30,18 @@
                         </ul>
                     </li>
 
-                    <li class="dropdown" role="presentation">
-                        <a href="/page/2" title="CV" class="header-link">
-                            CV
+                    <!--<li class="dropdown" role="presentation">
+                        <a href="/page/1" class="header-link">
+                            first
                         </a>
-                    </li>                     
-
-                    <li class="dropdown" role="presentation">
-                        <a href="/page/3" class="header-link">
-                            Words 
-                        </a>
-                    </li>                     
+                    </li>-->
 
                     @if (Auth::guest())
 
+                        {{--<li><a href="/register" class="header-link-secure">Register</a></li>--}}
+
                     @else
-                    
+
                         <li><a href="/pages" class="header-link-secure"><i class="fa fa-bookmark"></i> Pages</a></li>
                         <li><a href="/works" class="header-link-secure"><i class="fa fa-paint-brush"></i> Works</a></li>
                         <li><a href="/texts" class="header-link-secure"><i class="fa fa-align-left"></i> Texts</a></li>
@@ -76,7 +66,7 @@
                         <ul class="dropdown-menu" role="menu" aria-labelledby="dlabel">
                             <li class="dropdown" role="presentation"><a href="/logout" title="Log out" class="header-dropdown-link">Log out</a></li>
                         </ul>
-                @endif  
+                @endif
             </ul>
         </div>
     </nav>

@@ -19,6 +19,8 @@
 
 {{ Form::open(array('url' => 'works', 'files' => true)) }}
 
+
+
     <div class="form-group">
         {{ Form::label('image', 'Image') }}
         {{ Form::file('image', ['class' => 'btn btn-default']) }}
@@ -55,7 +57,7 @@
     </div>
 
     {{ Form::submit('Save', array('class' => 'btn btn-primary')) }}
-    <a href="/works" class="btn btn-sm btn-default">Cancel</a>
+    <a href="/works" class="btn btn-xs btn-default">Cancel</a>
 {{ Form::close() }}
 
 </div>

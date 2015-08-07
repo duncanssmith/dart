@@ -340,8 +340,11 @@ class GroupController extends BaseController {
             } else {
                 // store
                 $group = new Group;
-                $group->name = Input::get('name');
-                $group->order = Input::get('order');
+                $group->name       = Input::get('name');
+                $group->order      = Input::get('order');
+                $group->columns    = Input::get('columns');
+                $group->image_size = Input::get('image_size');
+                $group->layout     = Input::get('layout');
                 $group->save();
 
                 // redirect
@@ -427,8 +430,11 @@ class GroupController extends BaseController {
             } else {
                 // store
                 $group = Group::find($id);
-                $group->name       = Input::get('name');
+                $group->name        = Input::get('name');
                 $group->order       = Input::get('order');
+                $group->columns     = Input::get('columns');
+                $group->image_size  = Input::get('image_size');
+                $group->layout      = Input::get('layout');
                 $group->save();
 
                 // redirect

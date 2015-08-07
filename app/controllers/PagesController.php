@@ -66,7 +66,7 @@ class PagesController extends \BaseController {
             ->get();
 
         $i = 0;
-        $columns = 1;
+        $columns = (empty($group->columns) || 0 == $group->columns) ? 1 : $group->columns;
 
         // show the view and pass the group to it
         return View::make('pages.group')

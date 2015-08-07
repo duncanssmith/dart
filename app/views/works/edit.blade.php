@@ -17,7 +17,7 @@
 <!-- if there are creation errors, they will show here -->
 {{ HTML::ul($errors->all()) }}
 
-{{ Form::model($work, array('route' => array('works.update', $work->id), 'method' => 'PUT')) }}
+{{ Form::model($work, array('route' => array('works.update', $work->id), 'files' => true, 'method' => 'PUT')) }}
 
     <img src="/media/images/160/{{$work->reference}}.jpg">
 
@@ -57,7 +57,7 @@
 
 	{{ Form::submit('Save', array('class' => 'btn btn-primary')) }}
 
-	<a href="/works" class="btn btn-sm btn-default">Cancel</a>
+	<a href="/works" class="btn btn-xs btn-default">Cancel</a>
 
 {{ Form::close() }}
 </div>
