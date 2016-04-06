@@ -21,7 +21,7 @@
 
                     <li class="dropdown" role="presentation">
                         <a href="#" data-toggle="dropdown" class="header-link">
-                            pages
+                           <i class="fa fa-bars"></i> 
                         </a>
                         <ul class="dropdown-menu" role="menu" aria-labelledby="dLabel">
                             @foreach($group_list as $item)
