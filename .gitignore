@@ -7,18 +7,19 @@
 composer.phar
 composer.lock
 .idea/*.xml
-/public/media/images/640/*
-/public/media/images/320/*
-/public/media/images/160/*
-/public/media/images/120/*
 /public/media/images/64/*
+/public/media/images/120/*
+/public/media/images/160/*
+/public/media/images/320/*
+/public/media/images/640/*
 /public/media/images/Home/*
 /public/media/images/covers/*
-/public/uploads/works/*
 /public/uploads/covers/*
+/public/uploads/works/*
 
+.env.local.php
 .env.*.php
 .env.php
-.DS_Store
 .tags
+.DS_Store
 Thumbs.db
