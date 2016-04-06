@@ -36,9 +36,12 @@ Route::resource('sessions', 'SessionsController', ['only' => ['create', 'store',
 //Route::controller('password', 'RemindersController');
 
 // CRUD
+// CRUD
 Route::resource('works', 'WorkController');
+Route::resource('navigations', 'NavigationController');
 Route::resource('pages', 'GroupController');
 Route::resource('texts', 'TextController');
+Route::resource('covers', 'CoverController');
 
 // COMMENTED FOR PRODUCTION
 Route::resource('users', 'UserController');

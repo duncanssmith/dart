@@ -13,20 +13,20 @@
         <link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
         <link rel="stylesheet" href="/media/css/font-awesome.css">
         <link rel="stylesheet" href="/media/css/main.css">
-        {{--<link rel="stylesheet" href="/media/css/carousel.css">--}}
+        <link rel="stylesheet" href="/media/css/carousel.css">
 
         <script src="//code.jquery.com/jquery-1.10.2.js"></script>
         <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
-        {{--<script src="{{ asset('/media/js/vendor/jquery/jquery-2.1.1.min.js') }}"></script>--}}
+        <script src="{{ asset('/media/js/vendor/jquery/jquery-2.1.1.min.js') }}"></script>
         <script src="{{ asset('/media/js/vendor/twitter/bootstrap/js/bootstrap.min.js') }}"></script>
         <script src="//cdn.ckeditor.com/4.4.5/basic/ckeditor.js"></script>
         <script src="{{ asset('/media/js/image_sort.js')}}"></script>
-        <script src="{{ asset('/media/js/text_sort.js')}}"></script>
-        {{--<script src="{{ asset('/media/js/carousel_slider_bootstrap_thumbs.js') }}"></script>--}}
+        {{--<script src="{{ asset('/media/js/text_sort.js')}}"></script>--}}
+        <script src="{{ asset('/media/js/carousel_slider_bootstrap_thumbs.js') }}"></script>
 
     </head>
 
-    <body id="no-carousel" <?php echo isset($body_class) ? 'class="'.$body_class.'"' : ''?>>
+    <body id="carousel" <?php echo isset($body_class) ? 'class="'.$body_class.'"' : ''?>>
 
         @section('nav')
         @show

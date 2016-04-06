@@ -21,12 +21,20 @@ body {
     margin-top: -100px;
 }
 
-a, a:visited {
+a, a:hover, a:visited {
     text-decoration:none;
 }
 
+a.work-caption-link {
+    color: #666;
+}
+
+a.work-caption-link:hover {
+    color: #888;
+}
+
 a.header-link-secure {
-    color: #bbc !important;
+    color: #c6c !important;
 }
 
 a.header-link {
@@ -43,35 +51,10 @@ h1 {
     margin: 16px 0 0 0;
 }
 
-h1.main-page-1 {
-    font-size: 60px;
-    margin: 40px 0 40px 0;
-    background: rgba(9,9,9,0.3);
-    color: #fff;
-}
-
-h1.main-page-2 {
-    font-size: 48px;
-    margin: 40px 0 40px 0;
-    background: rgba(9,9,9,0.3);
-    color: #000;
-}
-
-h1.main-page-3 {
-    font-size: 36px;
-    margin: 40px 0 40px 0;
-    background: rgba(9,9,9,0.3);
-    color: #000;
-}
-
 .error {color:red; font-style:italic; font-size:.9em;}
 
-.container-fluid {
-    background: rgba(0, 0, 0, 0);
-    text-align: center;
-    display: table-cell;
-    vertical-align: middle;
-    color: rgba(100,100,100,.9);
+.container {
+    background: rgba(255, 255, 255, .999);
 }
 .work-container {
     border: 0px solid #00f;
@@ -80,6 +63,7 @@ h1.main-page-3 {
     font-size: 0.8em;
     color: #444;
 }
+
 
 .text-left {
     padding-bottom: 20px;
@@ -97,7 +81,7 @@ h1.main-page-3 {
 }
 
 .top-photo {
-    background: #b2ada8 url('../images/Home/land_meets_sea_A5h.png') no-repeat top center;
+    background: #282828 url('../images/covers/current.jpg') no-repeat top center;
     min-height: 285px;
     background-size: cover;
     color: rgba(100,100,100,.9);
@@ -114,3 +98,16 @@ h1.main-page-3 {
     background: rgba(255,255,255,.999);
     border-bottom: 1px solid rgba(180,180,180,.7);
 }
+
+.work-data td {
+    border: 1px solid silver;
+    padding: 2px 10px 2px 10px;
+}
+.work-data th {
+    border: 1px solid silver;
+}
+th {
+    border: 1px solid silver;
+    padding: 5px 10px 5px 10px;
+}
+
