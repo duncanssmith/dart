@@ -247,7 +247,6 @@ class GroupController extends BaseController {
      */
     public function save_page_texts_order()
     {
-
         if (Request::ajax()){
 
             $uuid = Input::get('uuid');
@@ -256,16 +255,12 @@ class GroupController extends BaseController {
             $i = 1;
 
             foreach($id as $val) {
-
                 $grouptext = GroupText::where('text_id', $val)->first();
-
                 $grouptext->order = $i;
                 $grouptext->save();
 
                 $i++;
-
             }
-
         }
 
         return Redirect::to('/');
@@ -278,7 +273,6 @@ class GroupController extends BaseController {
     {
         // Check the user is logged in...
         if (Auth::check()) {
-
             // paginate
             $groups = Group::orderBy('id', 'asc')->paginate(9);
 
@@ -288,11 +282,9 @@ class GroupController extends BaseController {
                 ->with('title', 'Pages');
 
         } else {
-
             // User is not logged in
             Session::flash('message', 'Please log in');
             return Redirect::to('/');
-
         }
     }
 
@@ -306,13 +298,13 @@ class GroupController extends BaseController {
         // load the create form (app/views/groups/create.blade.php)
         if (Auth::check()) {
 
-
             return View::make('groups.create')
                 ->with('entity', 'page')
                 ->with('title', 'Page create');
         } else {
             // User is not logged in
             Session::flash('message', 'Please log in');
+
             return Redirect::to('/');
         }
     }
@@ -345,15 +337,18 @@ class GroupController extends BaseController {
                 $group->columns    = Input::get('columns');
                 $group->image_size = Input::get('image_size');
                 $group->layout     = Input::get('layout');
+                $group->display    = (Input::get('display') == 'on') ? 1 : 0;
                 $group->save();
 
                 // redirect
                 Session::flash('message', 'Successfully created page');
+
                 return Redirect::to('pages');
             }
         } else {
             // User is not logged in
             Session::flash('message', 'Please log in');
+
             return Redirect::to('/');
         }
     }
@@ -378,6 +373,7 @@ class GroupController extends BaseController {
         } else {
             // User is not logged in
             Session::flash('message', 'Please log in');
+
             return Redirect::to('/');
         }
     }
@@ -435,6 +431,7 @@ class GroupController extends BaseController {
                 $group->columns     = Input::get('columns');
                 $group->image_size  = Input::get('image_size');
                 $group->layout      = Input::get('layout');
+                $group->display     = (Input::get('display') == 'on') ? 1 : 0;
                 $group->save();
 
                 // redirect
