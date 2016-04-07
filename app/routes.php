@@ -16,6 +16,10 @@ Route::post('/save_assigned_work', ['as' => 'save_assigned_work',  'uses' => 'Gr
 Route::get('/assign_text/{id}', ['as' => 'assign_text',  'uses' => 'GroupController@assign_text']);
 Route::post('/save_assigned_text', ['as' => 'save_assigned_text',  'uses' => 'GroupController@save_assigned_text']);
 
+// Set cover
+Route::get('/set_cover/{id}', ['as' => 'set_cover',  'uses' => 'CoverController@set_cover']);
+Route::post('/save_set_cover', ['as' => 'save_set_cover',  'uses' => 'CoverController@save_set_cover']);
+
 # Ordering items in Groups
 Route::get('/sort_page_works/{id}', ['as' => 'sort_page_works',  'uses' => 'GroupController@sort_page_works']);
 Route::get('/sort_page_texts/{id}', ['as' => 'sort_page_texts',  'uses' => 'GroupController@sort_page_texts']);
