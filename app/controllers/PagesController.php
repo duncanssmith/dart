@@ -40,44 +40,48 @@ class PagesController extends \BaseController {
      */
     public function pagegroup($id)
     {
-        // get the groups and the works and texts in them
-        $group = Group::orderBy('order', 'asc')
-            ->find($id);
-            // now that we are ordering the works and texts by the
-            // order fields in the pivot tables, we no longer need
-            // to get the works and texts with the groups.
-            //->with('Works')
-            //->with('Texts')
+        // get the group and its works and/or texts
+        $group = Group::find($id);
 
-        $works = DB::table('works')
-            ->join('group_work', 'works.id', '=', 'group_work.work_id')
-            ->join('groups', 'groups.id', '=', 'group_work.group_id')
-            ->select('group_work.order', 'works.id', 'works.title', 'works.media', 'works.dimensions', 'works.reference', 'works.work_date', 'works.description', 'works.notes')
-            ->where('groups.id', '=', $group->id)
-            ->orderBy('group_work.order')
-            ->get();
+        if ($group->display || Auth::check()) {
 
-        $texts = DB::table('texts')
-            ->join('group_text', 'texts.id', '=', 'group_text.text_id')
-            ->join('groups', 'groups.id', '=', 'group_text.group_id')
-            ->select('group_text.order', 'texts.id', 'texts.title', 'texts.author', 'texts.year', 'texts.description', 'texts.publication', 'texts.publication_date', 'texts.content')
-            ->where('groups.id', '=', $group->id)
-            ->orderBy('group_text.order')
-            ->get();
+                $works = DB::table('works')
+                    ->join('group_work', 'works.id', '=', 'group_work.work_id')
+                    ->join('groups', 'groups.id', '=', 'group_work.group_id')
+                    ->select('group_work.order', 'works.id', 'works.title', 'works.media', 'works.dimensions', 'works.reference', 'works.work_date', 'works.description', 'works.notes')
+                    ->where('groups.id', '=', $group->id)
+                    ->orderBy('group_work.order')
+                    ->get();
 
-        $i = 0;
-        $columns = (empty($group->columns) || 0 == $group->columns) ? 1 : $group->columns;
+                $texts = DB::table('texts')
+                    ->join('group_text', 'texts.id', '=', 'group_text.text_id')
+                    ->join('groups', 'groups.id', '=', 'group_text.group_id')
+                    ->select('group_text.order', 'texts.id', 'texts.title', 'texts.author', 'texts.year', 'texts.description', 'texts.publication', 'texts.publication_date', 'texts.content')
+                    ->where('groups.id', '=', $group->id)
+                    ->orderBy('group_text.order')
+                    ->get();
 
-        // show the view and pass the group to it
-        return View::make('pages.group')
-            ->with([
-                'group' => $group,
-                'works' => $works,
-                'texts' => $texts,
-                'i' => $i,
-                'columns' => $columns,
-                'title' => 'Duncan Smith: '.$group->name
-                ]);
+                $columns = (empty($group->columns) || (0 == $group->columns)) ? 1 : $group->columns;
+
+                $template = 'pages.group';
+
+                if ($group->layout == 1) {
+                    $template = 'pages.groupcarousel';
+                }
+
+                // show the view and pass the group to it
+                return View::make($template)
+                    ->with([
+                        'group' => $group,
+                        'works' => $works,
+                        'texts' => $texts,
+                        'columns' => $columns,
+                        'title' => 'Duncan Smith: ' . $group->name
+                    ]);
+            } else {
+                return Redirect::to('/');
+            }
+
     }
 
     /**
@@ -87,12 +91,19 @@ class PagesController extends \BaseController {
     {
         $work = Work::find($id);
 
-        $group = Group::find($_GET['group']);
+        if (!empty($_GET['group'])) {
+            $group = Group::find($_GET['group']);
 
-        return View::make('pages.work')
-            ->with('work', $work)
-            ->with('group', $group)
-            ->with('title', $work->title);
+            $view = View::make('pages.work')
+                ->with('work', $work)
+                ->with('group', $group)
+                ->with('title', $work->title);
+        } else {
+
+            $view = View::make('pages.work')
+                ->with('work', $work)
+                ->with('title', $work->title);
+        }
     }
 
     /**
