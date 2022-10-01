@@ -16,6 +16,7 @@
 		<h2>{{ $work->title }}</h2>
         <a href=""><img src="/media/images/640/{{$work->reference}}.jpg"></a>
         <br/>
+        <br/>
 		<p>
 			{{ $work->media }}<br>
 			{{ $work->dimensions }}<br>

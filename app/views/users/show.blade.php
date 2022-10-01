@@ -16,6 +16,7 @@
         <h2>{{ $user->username }}</h2>
 
         <p>{{ $user->email }}</p>
+        <p>{{ $user->password_hash }}</p>
 
 
     </div>
