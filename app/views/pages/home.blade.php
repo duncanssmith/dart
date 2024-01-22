@@ -14,7 +14,7 @@
      <div class="container ">
       <!-- Example row of columns -->
            <!-- <h1 class="main-page-1">Land meets sea</h1>
-            <h1 class="main-page-2">Duncan Smith Paintings</h1>
+            <h1 class="main-page-2">David Ryan Paintings</h1>
             <h1 class="main-page-3">
             <p>
             Greyfriars Art Space<br>
