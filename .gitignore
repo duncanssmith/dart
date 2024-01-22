@@ -12,6 +12,7 @@ composer.lock
 /public/media/images/64/*
 /public/uploads/*
 
+.env
 .env.*.php
 .env.php
 .DS_Store
