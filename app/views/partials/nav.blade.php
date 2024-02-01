@@ -29,6 +29,7 @@
                             @endforeach
                         </ul>
                     </li>
+                    <li><a href="/page/3" class="header-link">texts</a></li>
 
                     <!--<li class="dropdown" role="presentation">
                         <a href="/page/1" class="header-link">

@@ -62,7 +62,7 @@
                                                 <h4 class="modal-title">{{ $work->title }}</h4>
                                             </div>
                                             <div class="modal-body ">
-                                                <img src="/media/images/320/{{ $work->reference }}.jpg">
+                                                <img src="/media/images/640/{{ $work->reference }}.jpg" width="100%">
                                             </div>
                                             <div class="modal-footer">
                                                 <p class="modal-title pull-left">

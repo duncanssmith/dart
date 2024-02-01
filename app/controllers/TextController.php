@@ -105,13 +105,20 @@ class TextController extends BaseController {
             // get the text
             $text = Text::find($id);
 
-            // show the view and pass the text to it
-            return View::make('texts.show')
-                ->with([
-                    'text' => $text,
-                    'entity' => 'text',
-                    'title' => 'Text show'
-                    ]);
+	    if($text){
+		    // show the view and pass the text to it
+		    return View::make('texts.show')
+			->with([
+			    'text' => $text,
+			    'entity' => 'text',
+			    'title' => 'Text show'
+		    ]);
+	    } else {
+		    // Text requested doen't exist
+		    Session::flash('message', 'That text does not exist');
+		    return Redirect::to('/');
+	    }
+
         } else {
             // User is not logged in
             Session::flash('message', 'Please log in');

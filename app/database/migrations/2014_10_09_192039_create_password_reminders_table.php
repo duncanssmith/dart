@@ -12,7 +12,6 @@ class CreatePasswordRemindersTable extends Migration {
 	 */
 	public function up()
 	{
-		Schema::drop('password_reminders');
 		Schema::create('password_reminders', function(Blueprint $table)
 		{
 			$table->string('email')->index();

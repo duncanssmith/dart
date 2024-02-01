@@ -121,12 +121,18 @@ class WorkController extends BaseController {
 
             $groups = Group::all();
 
-            // show the view and pass the work to it
+	if ($work) {            // show the view and pass the work to it
             return View::make('works.show')
                 ->with('work', $work)
                 ->with('entity', 'work')
                 ->with('groups', $groups)
-                ->with('title', 'Work show');
+		->with('title', 'Work show');
+	} else {
+            // Work does not exist 
+            Session::flash('message', 'That work does not exist');
+            return Redirect::to('/');
+
+	}
         } else {
             // User is not logged in
             Session::flash('message', 'Please log in');
