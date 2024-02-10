@@ -19,9 +19,10 @@
                         </a>
                     </li>
 
+                    <li><a href="/page/8" class="header-link">Bio</a></li>
                     <li class="dropdown" role="presentation">
                         <a href="#" data-toggle="dropdown" class="header-link">
-                            pages
+                            Paintings
                         </a>
                         <ul class="dropdown-menu" role="menu" aria-labelledby="dLabel">
                             @foreach($group_list as $item)
@@ -29,7 +30,26 @@
                             @endforeach
                         </ul>
                     </li>
-                    <li><a href="/page/3" class="header-link">texts</a></li>
+                    <li><a href="/page/3" class="header-link">Texts</a></li>
+                    <li class="dropdown" role="presentation">
+                        <a href="#"  data-toggle="dropdown" class="header-link">
+                            Projects
+			</a>
+                        <ul class="dropdown-menu" role="menu" aria-labelledby="dLabel">
+													<li><a href="/page/9" class="header-dropdown-link">Via di San Teodoro 8</a></li>
+													<li><a href="/page/10" class="header-dropdown-link">Chemical Free (?) - Venice Biennale</a></li>
+													<li><a href="/page/11" class="header-dropdown-link">Drawing Towards Sound</a></li>
+													<li><a href="/page/19" class="header-dropdown-link">British School at Rome</a></li>
+													<li><a href="/page/20" class="header-dropdown-link">Painting, Drawing and Architecture (Phases 1,2,3 and 4)</a></li>
+													<li><a href="/page/12" class="header-dropdown-link">Recitativo</a></li>
+													<li><a href="/page/13" class="header-dropdown-link">Aphorisms</a></li>
+													<li><a href="/page/14" class="header-dropdown-link">The Undersides of Practice, APT Gallery</a></li>
+													<li><a href="/page/15" class="header-dropdown-link">Pescia Museo Civico, Italy</a></li>
+													<li><a href="/page/16" class="header-dropdown-link">I-ME/Inscriptions</a></li>
+													<li><a href="/page/17" class="header-dropdown-link">Echoes, Fragments, Inscriptions</a></li>
+													<li><a href="/page/18" class="header-dropdown-link">WIP</a></li>
+                        </ul>
+                    </li>
 
                     <!--<li class="dropdown" role="presentation">
                         <a href="/page/1" class="header-link">
@@ -43,9 +63,10 @@
 
                     @else
 
-                        <li><a href="/pages" class="header-link-secure"><i class="fa fa-bookmark"></i> Pages</a></li>
-                        <li><a href="/works" class="header-link-secure"><i class="fa fa-paint-brush"></i> Works</a></li>
-                        <li><a href="/texts" class="header-link-secure"><i class="fa fa-align-left"></i> Texts</a></li>
+                        <li><a href="/pages" class="header-link-secure" title="Add or update pages"><i class="fa fa-bookmark"></i> Pages</a></li>
+                        <li><a href="/works" class="header-link-secure" title="Add or update works"><i class="fa fa-paint-brush"></i> Works</a></li>
+                        <li><a href="/texts" class="header-link-secure" title="Add or update texts"><i class="fa fa-align-left"></i> Texts</a></li>
+			<li><a href="/covers" class="header-link-secure" title="Set, add, or change the cover image"><i class="fa fa-photo"></i> Covers</a></li>
 
                     @endif
 

@@ -61,6 +61,12 @@ App::error(function(Acme\Forms\FormValidationException $exception, $code)
     return Redirect::back()->withInput()->withErrors($exception->getErrors());
 });
 
+App::error(function(Symfony\Component\HttpKernel\Exception\NotFoundHttpException $exception, $code)
+{
+    //return Redirect::back()->withInput()->withErrors($exception->getErrors());
+    return Redirect::to('/');
+});
+
 /*
 |--------------------------------------------------------------------------
 | Maintenance Mode Handler
