@@ -15,10 +15,35 @@
 
     <div class="text-left">
         <h1>Page name: {{ $group->name }}</h1>
-        <p> <strong>Order:</strong> {{ $group->order }} of {{ $group->count() }} </p>
-        <p> <strong>Columns:</strong> {{ $group->columns }}</p>
-        <p> <strong>Image size:</strong> {{ $group->image_size }} </p>
-        <p> <strong>Layout:</strong> {{ $group->layout }} </p>
+        <br>
+        <table class="work-data work-data-1">
+                <tr>
+                    <th>Order </th>
+                    <td>{{ $group->order }} of {{ $group->count() }} </td>
+
+                    <th>Columns </th>
+                    <td>{{ $group->columns }} </td>
+
+                    <th>Image size </th>
+                    <td>{{ $group->image_size }} </td>
+
+                    <th>Layout </th>
+                    <td>{{ $group->layout }} </td>
+
+                    <th>Works </th>
+                    <td>{{ $group->works()->count() }} </td>
+
+                    <th>Texts </th>
+                    <td>{{ $group->texts()->count() }} </td>
+
+                    <th>Display ? </th>
+                    <td>
+                        @if($group->display)
+                            <span class="fa fa-check"></span>
+                        @endif
+                    </td>
+                </tr>
+            </table>
     </div>
 
     <a href="/pages" class="btn btn-xs btn-default"><i class="fa fa-arrow-left" style="color:#999;"></i> Back</a>

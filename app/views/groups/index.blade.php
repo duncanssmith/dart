@@ -30,6 +30,7 @@
             <td>Layout</td>
             <td>Works</td>
             <td>Texts</td>
+            <td>Display?</td>
             <td>Actions</td>
         </tr>
     </thead>
@@ -38,13 +39,18 @@
         <tr>
 
             <td>{{ $group->id }}</td>
-            <td><a href="/page/{{$group->id}}">{{ $group->name }}</a></td>
+            <td><a href="/page/{{$group->id}}" title="Click to view this page" target="_blank">{{ $group->name }}</a></td>
             <td>{{ $group->order }}</td>
             <td>{{ $group->columns }}</td>
             <td>{{ $group->image_size }}</td>
             <td>{{ $group->layout }}</td>
             <td>{{ $group->works()->count() }}</a></td>
             <td>{{ $group->texts()->count() }}</a></td>
+            <td>
+                @if($group->display)
+                    <span class="fa fa-check"></span>
+                @endif
+            </td
 
             <!-- we will also add show, edit, and delete buttons -->
             <td>

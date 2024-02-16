@@ -44,6 +44,11 @@
         {{ Form::text('layout', Input::old('layout'), array('class' => 'form-control')) }}
     </div>
 
+    <div class="form-group">
+        {{ Form::label('display', 'Display?') }}
+        {{ Form::checkbox('display', Input::old('display'), array('class' => 'form-control')) }}
+    </div
+
     {{ Form::submit('Save', array('class' => 'btn btn-primary')) }}
     <a href="/pages" class="btn btn-xs btn-default">Cancel</a>
 
