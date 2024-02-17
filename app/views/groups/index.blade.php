@@ -11,8 +11,7 @@
 @stop
 
 @section('content')
-    <h1> Pages</h1>
-    <p> {{ $groups->getTotal() }}</p>
+    <h1> Pages ({{ $groups->getTotal() }}) </h1>
 
 <!-- will be used to show any messages -->
 @if (Session::has('message'))
@@ -50,7 +49,7 @@
                 @if($group->display)
                     <span class="fa fa-check"></span>
                 @endif
-            </td
+            </td>
 
             <!-- we will also add show, edit, and delete buttons -->
             <td>
