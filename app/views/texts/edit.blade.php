@@ -54,8 +54,7 @@
         {{ Form::text('publication_date', null, array('class' => 'form-control')) }}
     </div>
 
-    {{ Form::submit('Save', array('class' => 'btn btn-primary')) }}
-
+    {{ Form::submit('Save', array('class' => 'btn btn-xs btn-primary')) }}
     <a href="/texts" class="btn btn-xs btn-default">Cancel</a>
 {{ Form::close() }}
 

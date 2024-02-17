@@ -55,9 +55,9 @@
 		{{ Form::text('notes', null, array('class' => 'form-control')) }}
 	</div>
 
-	{{ Form::submit('Save', array('class' => 'btn btn-primary')) }}
+	{{ Form::submit('Save', array('class' => 'btn btn-xs btn-primary')) }}
 
-	<a href="/covers" class="btn btn-default">Cancel</a>
+	<a href="/covers" class="btn btn-xs btn-default">Cancel</a>
 
 {{ Form::close() }}
 </div>
