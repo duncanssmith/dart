@@ -1,16 +1,16 @@
 <!-- app/views/groups/index.blade.php -->
 
-@extends('...layout.main')
+@extends ('...layout.main')
 
-@section('nav')
+@section ('nav')
 
-    @include('partials.nav')
+    @include ('partials.nav')
 
-    @include('partials.subnav')
+    @include ('partials.subnav')
 
 @stop
 
-@section('content')
+@section ('content')
     <h1> Pages ({{ $groups->getTotal() }}) </h1>
 
 <!-- will be used to show any messages -->
@@ -47,7 +47,7 @@
             <td>{{ $group->texts()->count() }}</a></td>
             <td>
                 @if($group->display)
-                    <span class="fa fa-check"></span>
+                    <span class="fa fa-check" style="color:green"></span>
                 @endif
             </td>
 

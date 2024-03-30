@@ -1,16 +1,16 @@
 <!-- app/views/covers/create.blade.php -->
 
-@extends('...layout.main')
+@extends ('...layout.main')
 
-@section('nav')
+@section ('nav')
 
-    @include('partials.nav')
+    @include ('partials.nav')
 
-    @include('partials.subnav')
+    @include ('partials.subnav')
 
 @stop
 
-@section('content')
+@section ('content')
 
 <h1>Add a new cover</h1>
 <br>
