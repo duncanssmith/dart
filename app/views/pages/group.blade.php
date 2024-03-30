@@ -1,14 +1,14 @@
 <!-- app/views/pages/group.blade.php -->
 
-@extends('...layout.main')
+@extends ('...layout.main')
 
-@section('nav')
+@section ('nav')
 
-    @include('partials.nav')
+    @include ('partials.nav')
 
 @stop
 
-@section('content')
+@section ('content')
 
     <div class="container">
 
@@ -17,14 +17,14 @@
 
                 <div class="text-left">
                     <h4>{{ $group->name }}</h4>
-                    @if(!$group->display)
-                        @include('partials.hidden')
+                    @if (!$group->display)
+                        @include ('partials.hidden')
                     @endif
                 </div>
 
 
                     <table>
-                    @foreach($works as $i => $work)
+                    @foreach ($works as $i => $work)
 
                         @if ($i % $columns == 0)
                             @if ($i==0)
@@ -73,7 +73,7 @@
 
             <div class="col-md-6">
                 <div class="text-container">
-                    @foreach($texts as $text)
+                    @foreach ($texts as $text)
                     <div class="text-left">
                         <h5>{{ $text->title }}</h5>
                     </div>

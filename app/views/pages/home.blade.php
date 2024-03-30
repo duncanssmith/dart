@@ -1,14 +1,14 @@
 <!-- app/views/pages/home.blade.php -->
 
-@extends('...layout.main')
+@extends ('...layout.main')
 
-@section('nav')
+@section ('nav')
 
-    @include('partials.nav')
+    @include ('partials.nav')
 
 @stop
 
-@section('content')
+@section ('content')
 
 
      <div class="container ">

@@ -1,16 +1,16 @@
 <!-- app/views/pages/index.blade.php -->
 
-@extends('layout.main')
+@extends ('layout.main')
 
-@section('nav')
+@section ('nav')
 
-    @include('partials.nav')
+    @include ('partials.nav')
 
     {{ Auth::check() ?  Auth::user()->username : "" }}
 
 @stop
 
-@section('content')
+@section ('content')
 
 <div class="starter-content">
 

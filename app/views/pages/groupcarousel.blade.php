@@ -1,24 +1,22 @@
 <!-- app/views/pages/groupcarousel.blade.php -->
 
-@extends('...layout.main_carousel')
+@extends ('...layout.main_carousel')
 
-@section('nav')
+@section ('nav')
 
-    @include('partials.nav')
+    @include ('partials.nav')
 
 @stop
 
-@section('content')
+@section ('content')
 
 <div class="container">
-
     <div class="text-left">
         <h4>{{ $group->name }}</h4>
-        @if(!$group->display)
-            @include('partials.hidden')
+        @if (!$group->display)
+            @include ('partials.hidden')
         @endif
     </div>
-
     <!-- main slider carousel -->
     <div class="row">
         <div class="col-md-12 col-md-offset-0" id="slider">
@@ -40,23 +38,18 @@
                             </div>
                     @endforeach
                      </div>
-
                         <!-- main slider carousel nav controls -->
                         <a class="carousel-control left" href="#myCarousel" data-slide="prev">&lsaquo;</a>
 
                         <a class="carousel-control right" href="#myCarousel" data-slide="next">&rsaquo;</a>
                 </div>
-
             </div>
         </div>
     </div>
     <!--/main slider carousel-->
-
     <div class="row">
-
         <!-- thumb navigation carousel -->
         <div class="col-md-12 hidden-sm hidden-xs" id="slider-thumbs">
-
             <!-- thumb navigation carousel items -->
             <ul class="list-inline">
                 @foreach ($works as $i => $work)
@@ -71,9 +64,7 @@
                 </li>
                 @endforeach
             </ul>
-
         </div>
-
     </div>
 </div>
 

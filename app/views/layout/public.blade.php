@@ -12,12 +12,12 @@
     </head>
 
     <body class="top-photo">
-        @section('nav')
+        @section ('nav')
         @show
 
         <div class="container ">
 
-            @yield('content')
+            @yield ('content')
 
         </div>
 

@@ -1,16 +1,16 @@
 <!-- app/views/texts/index.blade.php -->
 
-@extends('...layout.main')
+@extends ('...layout.main')
 
-@section('nav')
+@section ('nav')
 
-    @include('partials.nav')
+    @include ('partials.nav')
 
-    @include('partials.subnav')
+    @include ('partials.subnav')
 
 @stop
 
-@section('content')
+@section ('content')
     <h1> Texts</h1>
     <p>{{ $texts->getTotal() }} </p>
 
@@ -33,7 +33,7 @@
 		</tr>
 	</thead>
 	<tbody>
-	@foreach($texts as $text)
+	@foreach ($texts as $text)
 		<tr>
             <td><a href="{{ URL::to('texts/' . $text->id) }}">{{ $text->title }}</a></td>
             <td>{{ $text->author }}</td>

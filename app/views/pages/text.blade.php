@@ -1,12 +1,12 @@
 <!-- app/views/texts/show.blade.php -->
 
-@extends('...layout.main')
+@extends ('...layout.main')
 
-@section('nav')
+@section ('nav')
 
 @stop
 
-@section('content')
+@section ('content')
 
 <h1>{{ $text->title }}</h1>
 

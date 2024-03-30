@@ -21,7 +21,7 @@ $(function () {
             dataType: "json",
             data: {id: id, group_id: group_id, uuid: uuid},
             success: function(order){
-                console.log(group_id, id)
+               // console.log(group_id, id)
             }
         });
     });

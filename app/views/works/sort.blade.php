@@ -19,34 +19,34 @@
     <div class="alert alert-info">{{ Session::get('message') }}</div>
 @endif
 
-<table class="table table-striped table-bordered group" data-groupid="{{ $group->id}}">
-    <thead>
-        <tr>
-            <td>Image</td>
-            <td>Title</td>
-            <td>Media</td>
-            <td>Dimensions</td>
-            <td>Date</td>
-            <td>Description</td>
-        </tr>
-    </thead>
-    <tbody id="sortable" class="sortable">
-    @foreach($works as $work)
-        <tr class="ui-state-default" data-id="{{ $work->id }}">
+	<table class="table table-striped table-bordered group" data-groupid="{{ $group->id}}">
+		<thead>
+			<tr>
+				<th>Reorder</th>
+				<th>Image</th>
+				<th>Title</th>
+				<th>Media</th>
+				<th>Dimensions</th>
+				<th>Date</th>
+				<th>Description</th>
+			</tr>
+		</thead>
+		<tbody id="sortable" class="sortable">
+		@foreach ($works as $work)
+			<tr class="ui-state-default" data-id="{{ $work->id }}">
+				<td><i class="fa fa-sort fa-fw" style="color:#3d4"></i>
+				<td><a href="{{ URL::to('works/' . $work->id) }}"><img src="/media/images/64/{{ $work->reference }}.jpg"></a></td>
+				<td>{{ $work->title }}</td>
+				<td>{{ $work->media }}</td>
+				<td>{{ $work->dimensions }}</td>
+				<td>{{ $work->work_date }}</td>
+				<td>{{ $work->description }}</td>
+			</tr>
+		@endforeach
+		</tbody>
+	</table>
 
-            <td><a href="{{ URL::to('works/' . $work->id) }}"><img src="/media/images/64/{{ $work->reference }}.jpg"></a></td>
-            <td>{{ $work->title }}</td>
-            <td>{{ $work->media }}</td>
-            <td>{{ $work->dimensions }}</td>
-            <td>{{ $work->work_date }}</td>
-            <td>{{ $work->description }}</td>
-
-        </tr>
-    @endforeach
-    </tbody>
-</table>
-
-    <a href="/pages" class="btn btn-xs btn-default"><i class="fa fa-arrow-left" style="color:#999;"></i> Back</a>
+	<a href="/pages" class="btn btn-xs btn-default"><i class="fa fa-arrow-left" style="color:#999;"></i> Back</a>
 </div>
 
 @stop

@@ -1,19 +1,18 @@
 <!-- app/views/pages/texts.blade.php -->
 
-@extends('...layout.main')
+@extends ('...layout.main')
 
-@section('nav')
+@section ('nav')
 
 @stop
 
-@section('content')
+@section ('content')
 
 	<div class="nav-collapse collapse">
 	    <ul class="nav">
-	    @foreach($texts as $text)
-           <li><a href="/pagetext/{{$text->id}}">{{ $text->title }}</a></li>
-        @endforeach
+	    @foreach ($texts as $text)
+                <li><a href="/pagetext/{{$text->id}}">{{ $text->title }}</a></li>
+            @endforeach
         </ul>
 	</div>
-
 @stop

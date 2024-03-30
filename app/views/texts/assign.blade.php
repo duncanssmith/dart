@@ -1,16 +1,16 @@
 <!-- app/views/texts/edit.blade.php -->
 
-@extends('...layout.main')
+@extends ('...layout.main')
 
-@section('nav')
+@section ('nav')
 
-    @include('partials.nav')
+    @include ('partials.nav')
 
-    @include('partials.subnav')
+    @include ('partials.subnav')
 
 @stop
 
-@section('content')
+@section ('content')
 
 <h1>{{ $text->title }}</h1>
 <p>Select the groups you want this text to appear in.</p>

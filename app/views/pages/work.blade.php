@@ -1,19 +1,19 @@
 <!-- app/views/works/show.blade.php -->
 
-@extends('...layout.main')
+@extends ('...layout.main')
 
-@section('nav')
+@section ('nav')
 
-    @include('partials.nav')
+    @include ('partials.nav')
 
 @stop
 
-@section('content')
+@section ('content')
 
 <h1>{{ $work->name }}</h1>
 
 	<div class="text-left">
-		<h2>{{ $work->title }}</h2>
+	<h2>{{ $work->title }}</h2>
         <a href=""><img src="/media/images/640/{{$work->reference}}.jpg"></a>
         <br/>
         <br/>
