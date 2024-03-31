@@ -342,15 +342,18 @@ class GroupController extends BaseController {
                 return Redirect::to('pages/create')
                     ->withErrors($validator)
                     ->withInput(Input::except('password'));
-            } else {
-                // store
-                $group = new Group;
-                $group->name       = Input::get('name');
-                $group->order      = Input::get('order');
-                $group->columns    = Input::get('columns');
-                $group->image_size = Input::get('image_size');
-                $group->layout     = Input::get('layout');
-                $group->save();
+	    } else {
+
+			// store
+			$group = new Group;
+			$group->name       = Input::get('name');
+			$group->order      = Input::get('order');
+			$group->columns    = Input::get('columns');
+			$group->image_size = Input::get('image_size');
+			$group->layout     = Input::get('layout');
+			$display = !empty(Input::get('display')) ? 1 : 0;
+			$group->display    = $display;
+			$group->save();
 
                 // redirect
                 Session::flash('message', 'Successfully created page');
@@ -434,13 +437,15 @@ class GroupController extends BaseController {
                     ->withInput(Input::except('password'));
             } else {
                 // store
-                $group = Group::find($id);
-                $group->name        = Input::get('name');
-                $group->order       = Input::get('order');
-                $group->columns     = Input::get('columns');
-                $group->image_size  = Input::get('image_size');
-                $group->layout      = Input::get('layout');
-                $group->save();
+			$group = Group::find($id);
+			$group->name        = Input::get('name');
+			$group->order       = Input::get('order');
+			$group->columns     = Input::get('columns');
+			$group->image_size  = Input::get('image_size');
+			$group->layout      = Input::get('layout');
+			$display = !empty(Input::get('display')) ? 1 : 0;
+			$group->display    = $display;
+			$group->save();
 
                 // redirect
                 Session::flash('message', 'Successfully updated page');
