@@ -20,7 +20,7 @@
 
 
     </div>
-    <a href="/users" class="btn btn-xs btn-default"><i class="fa fa-arrow-left" style="color:#999;"></i> Back</a>
+    <a href="/users" class=""><i class="fa fa-arrow-left" style="color:#3d4;"></i> Back</a>
 </div>
 
 @stop

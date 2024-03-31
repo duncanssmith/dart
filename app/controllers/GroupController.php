@@ -195,7 +195,6 @@ class GroupController extends BaseController {
 
             foreach($id as $value) {
                 $groupwork = GroupWork::where('work_id', $value)->where('group_id', $group_id)->first();
-
                 $groupwork->order = $i;
                 $groupwork->save();
 
@@ -213,11 +212,15 @@ class GroupController extends BaseController {
     public function sort_page_texts($id)
     {
         if (Auth::check()) {
-            $group = Group::where('id', '=', $id)->first();
+            $group = Group::with('Texts')->where('id', '=', $id)->first();
 
-            // paginate
-            $groups = Group::orderBy('id', 'asc')->paginate(9);
-            $texts = $group->texts;
+            $texts = DB::table('texts')
+            ->join('group_text', 'texts.id', '=', 'group_text.text_id')
+            ->join('groups', 'groups.id', '=', 'group_text.group_id')
+            ->select('group_text.order', 'texts.id', 'texts.title', 'texts.content', 'texts.author', 'texts.description', 'texts.year')
+            ->where('groups.id', '=', $group->id)
+            ->orderBy('group_text.order')
+            ->get();
 
             if (sizeof($texts) < 1) {
                 Session::flash('message', 'There are currently no texts on the '.$group->name.' page');
@@ -231,7 +234,6 @@ class GroupController extends BaseController {
             return View::make('texts.sort')
                 ->with('group', $group)
                 ->with('texts', $texts)
-                ->with('groups', $groups)
                 ->with('entity', 'page texts')
                 ->with('title', 'Sort page texts');
 
@@ -252,20 +254,17 @@ class GroupController extends BaseController {
 
             $uuid = Input::get('uuid');
             $id = Input::get('id');
+            $group_id = Input::get('group_id');
 
             $i = 1;
 
-            foreach($id as $val) {
-
-                $grouptext = GroupText::where('text_id', $val)->first();
-
+            foreach($id as $value) {
+                $grouptext = GroupText::where('text_id', $value)->where('group_id', $group_id)->first();
                 $grouptext->order = $i;
                 $grouptext->save();
 
                 $i++;
-
             }
-
         }
 
         return Redirect::to('/');

@@ -49,24 +49,29 @@ class PagesController extends \BaseController {
             //->with('Works')
             //->with('Texts')
 
-        $works = DB::table('works')
-            ->join('group_work', 'works.id', '=', 'group_work.work_id')
-            ->join('groups', 'groups.id', '=', 'group_work.group_id')
-            ->select('group_work.order', 'works.id', 'works.title', 'works.media', 'works.dimensions', 'works.reference', 'works.work_date', 'works.description', 'works.notes')
-            ->where('groups.id', '=', $group->id)
-            ->orderBy('group_work.order')
-            ->get();
+        if ($group) {
+		$works = DB::table('works')
+		    ->join('group_work', 'works.id', '=', 'group_work.work_id')
+		    ->join('groups', 'groups.id', '=', 'group_work.group_id')
+		    ->select('group_work.order', 'works.id', 'works.title', 'works.media', 'works.dimensions', 'works.reference', 'works.work_date', 'works.description', 'works.notes')
+		    ->where('groups.id', '=', $group->id)
+		    ->orderBy('group_work.order')
+		    ->get();
 
-        $texts = DB::table('texts')
-            ->join('group_text', 'texts.id', '=', 'group_text.text_id')
-            ->join('groups', 'groups.id', '=', 'group_text.group_id')
-            ->select('group_text.order', 'texts.id', 'texts.title', 'texts.author', 'texts.year', 'texts.description', 'texts.publication', 'texts.publication_date', 'texts.content')
-            ->where('groups.id', '=', $group->id)
-            ->orderBy('group_text.order')
-            ->get();
+		$texts = DB::table('texts')
+		    ->join('group_text', 'texts.id', '=', 'group_text.text_id')
+		    ->join('groups', 'groups.id', '=', 'group_text.group_id')
+		    ->select('group_text.order', 'texts.id', 'texts.title', 'texts.author', 'texts.year', 'texts.description', 'texts.publication', 'texts.publication_date', 'texts.content')
+		    ->where('groups.id', '=', $group->id)
+		    ->orderBy('group_text.order')
+		    ->get();
 
-        $i = 0;
-        $columns = (empty($group->columns) || 0 == $group->columns) ? 1 : $group->columns;
+		$i = 0;
+		$columns = (empty($group->columns) || 0 == $group->columns) ? 1 : $group->columns;
+	} else {
+		Session::flash('message', 'Page does not exist. Redirecting');
+		return Redirect::to('/');
+	}
 
         // show the view and pass the group to it
         return View::make('pages.group')
