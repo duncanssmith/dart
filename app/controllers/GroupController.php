@@ -285,7 +285,7 @@ class GroupController extends BaseController {
         if (Auth::check()) {
 
             // paginate
-            $groups = Group::orderBy('id', 'asc')->paginate(9);
+            $groups = Group::orderBy('order', 'asc')->paginate(9);
 
             return View::make('groups.index')
                 ->with('groups', $groups)

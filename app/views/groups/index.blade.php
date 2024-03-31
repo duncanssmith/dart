@@ -21,7 +21,6 @@
 <table class="table table-striped table-bordered">
     <thead>
         <tr>
-            <td>Id</td>
             <td>Name</td>
             <td>Order</td>
             <td>Columns</td>
@@ -37,7 +36,6 @@
     @foreach($groups as $group)
         <tr>
 
-            <td>{{ $group->id }}</td>
             <td><a href="/page/{{$group->id}}" title="Click to view this page" target="_blank">{{ $group->name }}</a></td>
             <td>{{ $group->order }}</td>
             <td>{{ $group->columns }}</td>
