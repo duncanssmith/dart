@@ -11,46 +11,47 @@
 @stop
 
 @section ('content')
-    <h1> Pages ({{ $groups->getTotal() }}) </h1>
-
+	<h1> Pages </h1>
+	<p>{{ $groups->getTotal() }} </p>
+	<p>To use the carousel page format set 'layout' to '1', for normal page format set it to '0'</p>
+	<p>To use a multi columns page format set 'columns' to greater than '1'. Multi-column pages don't really work if there are texts on the same page. Yet.</p>
 <!-- will be used to show any messages -->
 @if (Session::has('message'))
     <div class="alert alert-info">{{ Session::get('message') }}</div>
 @endif
 
 <table class="table table-striped table-bordered">
-    <thead>
-        <tr>
-            <td>Name</td>
-            <td>Order</td>
-            <td>Columns</td>
-            <td>Image size</td>
-            <td>Layout</td>
-            <td>Works</td>
-            <td>Texts</td>
-            <td>Display?</td>
-            <td>Actions</td>
-        </tr>
-    </thead>
-    <tbody>
+	<thead>
+		<tr>
+			<th>Name</th>
+			<th>Order</th>
+			<th>Columns</th>
+			{{-- <th>Image size</th> --}}
+			<th>Layout</th>
+			<th>Works</th>
+			<th>Texts</th>
+			<th>Display?</th>
+			<th>Actions</th>
+		</tr>
+	</thead>
+	<tbody>
     @foreach($groups as $group)
-        <tr>
-
-            <td><a href="/page/{{$group->id}}" title="Click to view this page" target="_blank">{{ $group->name }}</a></td>
-            <td>{{ $group->order }}</td>
-            <td>{{ $group->columns }}</td>
-            <td>{{ $group->image_size }}</td>
-            <td>{{ $group->layout }}</td>
-            <td>{{ $group->works()->count() }}</a></td>
-            <td>{{ $group->texts()->count() }}</a></td>
-            <td>
-                @if($group->display)
-                    <span class="fa fa-check" style="color:green"></span>
-                @endif
-            </td>
+		<tr>
+			<td><a href="/page/{{$group->id}}" title="Click to view this page" target="_blank">{{ $group->name }}</a></td>
+			<td>{{ $group->order }}</td>
+			<td>{{ $group->columns }}</td>
+			{{-- <td>{{ $group->image_size }}</td> --}}
+			<td>{{ $group->layout }}</td>
+			<td>{{ $group->works()->count() }}</a></td>
+			<td>{{ $group->texts()->count() }}</a></td>
+			<td>
+				@if ($group->display)
+				<span class="fa fa-check" style="color:green"></span>
+				@endif
+			</td>
 
             <!-- we will also add show, edit, and delete buttons -->
-            <td>
+			<td>
 
                 {{--{{ Html::link(URL::route('Groups.destroy',$event->id), 'Delete', array('class' => 'btn btn-xs btn-danger delete-event', 'data-title'=>'Delete group', 'data-content' => 'Are you sure you want to delete this groups?', 'onClick'=>'return false;')) }}--}}
 
@@ -92,11 +93,10 @@
                         </div>
                     </div>
                 </div>
-
-            </td>
-        </tr>
+			</td>
+		</tr>
     @endforeach
-    </tbody>
+	</tbody>
 </table>
 
 {{ $groups->links() }}

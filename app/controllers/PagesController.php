@@ -41,15 +41,15 @@ class PagesController extends \BaseController {
     public function pagegroup($id)
     {
         // get the groups and the works and texts in them
-        $group = Group::orderBy('order', 'asc')
-            ->find($id);
+        $group = Group::orderBy('order', 'asc')->find($id);
+	$template = 'pages.group';
             // now that we are ordering the works and texts by the
             // order fields in the pivot tables, we no longer need
             // to get the works and texts with the groups.
             //->with('Works')
             //->with('Texts')
 
-	if ($group) {
+	if ($group && $group->display) {
 		$works = DB::table('works')
 		    ->join('group_work', 'works.id', '=', 'group_work.work_id')
 		    ->join('groups', 'groups.id', '=', 'group_work.group_id')
@@ -67,6 +67,10 @@ class PagesController extends \BaseController {
 		    ->get();
 
 		$columns = (empty($group->columns) || 0 == $group->columns) ? 1 : $group->columns;
+		$template = 'pages.group';
+		if ($group->layout == 1) {
+			$template = 'pages.groupcarousel';
+		}
 	} else {
 		Session::flash('message', "That page doesn't exist");
 		return Redirect::to('/');
@@ -75,7 +79,7 @@ class PagesController extends \BaseController {
         $i = 0;
 
         // show the view and pass the group to it
-        return View::make('pages.group')
+        return View::make($template)
             ->with([
                 'group' => $group,
                 'works' => $works,
