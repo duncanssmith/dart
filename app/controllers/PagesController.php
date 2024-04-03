@@ -71,6 +71,9 @@ class PagesController extends \BaseController {
 		if ($group->layout == 1) {
 			$template = 'pages.groupcarousel';
 		}
+		elseif ($group->layout == 2) {
+			$template = 'pages.groupvideo';
+		}
 	} else {
 		Session::flash('message', "That page doesn't exist");
 		return Redirect::to('/');
