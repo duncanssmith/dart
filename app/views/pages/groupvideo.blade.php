@@ -21,6 +21,7 @@
                     @if (!$group->display)
                         @include ('partials.hidden')
                     @endif
+                    <h6>Video</h6>
                 </div>
 
 

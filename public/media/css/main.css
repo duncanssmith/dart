@@ -64,6 +64,13 @@ h1.main-page-3 {
     color: #000;
 }
 
+.dropdown-menu {
+    max-height: 300px;
+    max-width: 500px;
+    overflow-x: scroll;
+    overflow-y: scroll;
+}
+
 
 
 .error {color:red; font-style:italic; font-size:.9em;}
