@@ -26,7 +26,7 @@ return array(
     |
     */
 
-    'url' => 'http://www.d-ryan.com',
+    'url' => 'http://www.judithfrost.co.uk',
 
     /*
     |--------------------------------------------------------------------------
@@ -78,7 +78,7 @@ return array(
     |
     */
 
-    'key' => 'iumtyIdSopC9vHp7iskH3S4Qp8cLaNss',
+    'key' => '7zX003vOXXweQbLEeTH5cH4uxSJeztMt',
 
     'cipher' => MCRYPT_RIJNDAEL_128,
 

@@ -1,7 +1,7 @@
-drop database dart;
+drop database jf1;
 
-create database dart;
-create user 'dart'@'localhost' identified by 'sienna';
-grant all privileges on dart.* to 'dart'@'localhost' with grant option;
+create database jf1;
+create user 'jf'@'localhost' identified by 'sienna';
+grant all privileges on jf1.* to 'jf'@'localhost' with grant option;
 flush privileges;
 

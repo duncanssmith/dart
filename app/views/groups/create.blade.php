@@ -47,9 +47,9 @@
     <div class="form-group">
         {{ Form::label('display', 'Display?') }}
         {{ Form::checkbox('display', Input::old('display'), array('class' => 'form-control')) }}
-    </div
+    </div>
 
-    {{ Form::submit('Save', array('class' => 'btn btn-xs btn-primary')) }}
+    {{ Form::submit('Save', array('class' => 'btn btn-primary')) }}
 
 {{ Form::close() }}
 

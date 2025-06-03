@@ -15,7 +15,7 @@
 
                     <li class="dropdown" role="presentation">
                         <a href="/" class="navbar-brand header-link">
-                            <strong>David Ryan</strong>
+                            <strong>Judith Frost</strong>
                         </a>
                     </li>
 

@@ -23,7 +23,7 @@ class RegistrationController extends \BaseController {
 	public function create()
 	{
 		return View::make('registration.create')
-            ->with('title', 'David Ryan: register');
+            ->with('title', 'Judith Frost: register');
 	}
 
 	/**

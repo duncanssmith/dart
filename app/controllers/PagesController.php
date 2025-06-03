@@ -27,7 +27,7 @@ class PagesController extends \BaseController {
             ->with('groups', $groups)
             ->with('texts', $texts)
             ->with('body_class', $body_class)
-            ->with('title', 'David Ryan');
+            ->with('title', 'Judith Frost');
     }
 
     /**
@@ -89,7 +89,7 @@ class PagesController extends \BaseController {
                 'texts' => $texts,
                 'i' => $i,
                 'columns' => $columns,
-                'title' => 'David Ryan: '.$group->name
+                'title' => 'Judith Frost: '.$group->name
                 ]);
     }
 
@@ -119,7 +119,7 @@ class PagesController extends \BaseController {
         // show the view and pass the group to it
         return View::make('pages.texts')
             ->with('texts', $texts)
-            ->with('title', 'David Ryan Texts');
+            ->with('title', 'Judith Frost Texts');
     }
 
 }
