@@ -22,7 +22,7 @@
                     <li><a href="/page/8" class="header-link">Bio</a></li>
                     <li class="dropdown" role="presentation">
                         <a href="#" data-toggle="dropdown" class="header-link">
-                            Paintings
+                            Paintings/Projects
                         </a>
                         <ul class="dropdown-menu" role="menu" aria-labelledby="dLabel">
                             @foreach($group_list as $item)
@@ -32,10 +32,11 @@
                     </li>
                     <li><a href="/page/3" class="header-link">Texts</a></li>
                     <li class="dropdown" role="presentation">
-                        <a href="#"  data-toggle="dropdown" class="header-link">
-                            Projects
-			</a>
-                        <ul class="dropdown-menu" role="menu" aria-labelledby="dLabel">
+                        <!--<a href="/page/22"  data-toggle="dropdown" class="header-link">-->
+                        <a href="/page/22"  class="header-link">
+                            Drawings
+                        </a>
+                        <!--<ul class="dropdown-menu" role="menu" aria-labelledby="dLabel">
 													<li><a href="/page/9" class="header-dropdown-link">Via di San Teodoro 8</a></li>
 													<li><a href="/page/10" class="header-dropdown-link">Chemical Free (?) - Venice Biennale</a></li>
 													<li><a href="/page/11" class="header-dropdown-link">Drawing Towards Sound</a></li>
@@ -48,9 +49,10 @@
 													<li><a href="/page/16" class="header-dropdown-link">I-ME/Inscriptions</a></li>
 													<li><a href="/page/17" class="header-dropdown-link">Echoes, Fragments, Inscriptions</a></li>
 													<li><a href="/page/18" class="header-dropdown-link">WIP</a></li>
-                        </ul>
-                    </li>
+												</ul>-->
+										</li>
 
+                    <li><a href="/page/21" class="header-link">Contact</a></li>
                     <!--<li class="dropdown" role="presentation">
                         <a href="/page/1" class="header-link">
                             first

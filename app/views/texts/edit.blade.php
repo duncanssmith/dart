@@ -31,7 +31,7 @@
 
     <div class="form-text">
         {{ Form::label('content', 'Content') }}
-        {{ Form::textarea('content', null, array('class' => 'form-control ckeditor')) }}
+        {{ Form::textarea('content', null, array('class' => 'form-control', 'id' => 'myeditor', 'rows' => '15')) }}
     </div>
 
     <div class="form-text">

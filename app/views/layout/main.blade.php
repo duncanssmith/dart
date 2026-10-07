@@ -19,7 +19,19 @@
         <script src="//code.jquery.com/ui/1.11.2/jquery-ui.js"></script>
 
         <!--<script src="{{ asset('/media/js/vendor/ckeditor/ckeditor.js') }}"></script> -->
-        <script src="//cdn.ckeditor.com/4.4.5/basic/ckeditor.js"></script>
+        <!--<script src="//cdn.ckeditor.com/4.4.5/basic/ckeditor.js"></script> -->
+
+        <script src="{{ asset('/media/js/vendor/tinymce/tinymce/tinymce.min.js') }}"></script>
+        <script>
+            tinymce.init({
+            selector: '#myeditor',
+            licence_key: 'gpl',
+            plugins: 'link image lists code table',
+            toolbar: 'undo redo | styles | bold italic | alignleft aligncenter alignright | bullist numlist | link image | code',
+            menubar: false,
+            branding: false // removes "Powered by Tiny"
+        });
+        </script>
 
         <!--<script type="text/javascript" src="//cdn.jsdelivr.net/jquery.slick/1.4.1/slick.min.js"></script>-->
 
