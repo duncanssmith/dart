@@ -3,8 +3,8 @@
     <head>
     	<meta charset="UTF-8">
         <title>{{$title}}</title>
-        <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
-        <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css">
+        <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
+        <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css">
         <link rel="stylesheet" href="/media/css/font-awesome.css">
         <link rel="stylesheet" href="/media/css/main.css">
         <!-- <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/jquery.slick/1.4.1/slick.css"/>
@@ -18,10 +18,17 @@
         <script src="//code.jquery.com/jquery-1.10.2.js"></script>
         <script src="//code.jquery.com/ui/1.11.2/jquery-ui.js"></script>
 
-        <!--<script src="{{ asset('/media/js/vendor/ckeditor/ckeditor.js') }}"></script> -->
-        <script src="//cdn.ckeditor.com/4.4.5/basic/ckeditor.js"></script>
-
-        <!--<script type="text/javascript" src="//cdn.jsdelivr.net/jquery.slick/1.4.1/slick.min.js"></script>-->
+        <script src="{{ asset('/media/js/vendor/tinymce/tinymce/tinymce.min.js') }}"></script>
+        <script>
+            tinymce.init({
+            selector: '#myeditor',
+            licence_key: 'gpl',
+            plugins: 'link image lists code table',
+            toolbar: 'undo redo | styles | bold italic | alignleft aligncenter alignright | bullist numlist | link image | code',
+            menubar: false,
+            branding: false // removes "Powered by Tiny"
+        });
+        </script>
 
         <script src="{{ asset('/media/js/image_sort.js')}}"></script>
         <script src="{{ asset('/media/js/text_sort.js')}}"></script>

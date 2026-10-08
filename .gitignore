@@ -19,3 +19,4 @@ composer.lock
 .tags
 Thumbs.db
 readme*
+/public/media/js/vendor/tinymce/
